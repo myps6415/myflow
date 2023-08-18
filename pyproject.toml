@@ -8,6 +8,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+beautifulsoup4 = "^4.12.2"
+black = "^23.7.0"
+apache-airflow = "^2.6.3"
 
 
 [build-system]
