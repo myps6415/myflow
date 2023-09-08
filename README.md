@@ -125,6 +125,38 @@ DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
 - Because here is just a demo for my Airflow environment, so I'm not sure the code in here can run normally.
 - The Airflow task code will be [fetch_twitter.py](/docker/airflow/dags/fetch_twitter.py), and it will use [module.py](/src/myflow/tasks/twitter/module.py)
   - In [module.py](/src/myflow/tasks/twitter/module.py), as you can see the setting looks like the previous case I set `mitmproxy` as proxy server.
+- The Airflow task logs are below, just got an empty list back, and I think it's because listen error proxy.
+```
+[2023-09-04, 01:14:51 UTC] {storage.py:38} INFO - Using default request storage
+[2023-09-04, 01:14:51 UTC] {backend.py:31} INFO - Created proxy listening on 127.0.0.1:33447
+[2023-09-04, 01:15:21 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:15:26 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:15:31 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:15:36 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:15:41 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:15:53 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:15:58 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:16:03 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:16:08 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:16:13 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:16:24 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:16:29 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:16:34 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:16:39 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:16:44 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:16:56 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:01 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:06 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:11 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:16 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:27 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:32 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:37 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:42 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:47 UTC] {logging_mixin.py:149} INFO - []
+[2023-09-04, 01:17:47 UTC] {python.py:183} INFO - Done. Returned value was: None
+[2023-09-04, 01:17:47 UTC] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=fetch_twitter, task_id=fetch_twitter_data, execution_date=20230902T000000, start_date=20230904T011450, end_date=20230904T011747
+```
 
 ## Resource
 [Running Airflow in Docker](https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html)

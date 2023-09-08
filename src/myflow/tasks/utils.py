@@ -26,8 +26,8 @@ class SeleniumConfig:
     def __init__(self) -> None:
         self.sw_options = {
             "auto_config": False,  # Ensure this is set to False
-            "addr": "127.0.0.1",  # The address the proxy will listen on
-            "port": 8082,  # The port the proxy will listen on
+            "addr": "0.0.0.0",  # The address the proxy will listen on
+            "port": 8080,  # The port the proxy will listen on
         }
 
         self.sleep_time = random.randint(3, 7)
