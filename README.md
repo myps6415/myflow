@@ -27,6 +27,10 @@ I think because my code needs to be executed within the container, I need to sta
 
 So, as you can see in the docker-compose.yml I add mitmproxy below, and I will set selenium-wire to `--proxy-server=http://airflow-mitmproxy-1:8080`.
 
+### Architecture
+Here is the architecture of the container settings. I installed the selenium-wire in the Airflow container, and it will run selenium in the selenium grid container. Because I found it can’t get back the network requests, so I added the mitmproxy container to catch it, and I can see the requests in mitmproxy. But it still can not get it back to the Airflow container, as you said, I think it’s a proxy settings problem.
+![](/assets/architecture.png)
+
 ### Test cases
 - Here, I set addr as `0.0.0.0` and use the `8080` port. I tried to set `http://airflow-mitmproxy-1` but I got an error here.
 - I put 2 cases below.
